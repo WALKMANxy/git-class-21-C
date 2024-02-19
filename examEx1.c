@@ -23,7 +23,7 @@ void simulateDailyIntakeFormulasWithFixedWeightRandomHeightFixedAge(int sex, flo
 
 int main()
 {
-    int choice, a, b, n, sex, age;
+    int choice, submenuChoice, a, b, n, sex, age;
     float height, weight;
     srand(time(NULL));
 
@@ -109,116 +109,121 @@ int main()
             break;
         case 10:
         {
-            int variationChoice;
-            printf("Choose the data variation:\n");
-            printf("1. Random Weight variation\n");
-            printf("2. Random weight, height, and age variation\n");
-            printf("3. Fixed weight, random height, and random age variation\n");
-            printf("4. Fixed weight, fixed height, and random age variation\n");
-            printf("5. Random weight, fixed height, and random age variation\n");
-            printf("6. Random weight, random height, and fixed age variation\n");
-            printf("7. Random weight, fixed height, and fixed age variation\n");
-            printf("8. Fixed weight, random height, and fixed age variation\n");
-
-            scanf("%d", &variationChoice);
-
-            switch (variationChoice)
+            submenuChoice = 0;
+            while (submenuChoice != 9)
             {
-            case 1:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithWeightVariation(sex, weight, height, age);
-                break;
-            case 2:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithRandomWeightHeightAge(sex, weight, height, age);
-                break;
-            case 3:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithFixedWeightRandomHeightRandomAge(sex, weight, height, age);
-                break;
-            case 4:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithFixedWeightFixedHeightRandomAge(sex, weight, height, age);
-                break;
-            case 5:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithRandomWeightFixedHeightRandomAge(sex, weight, height, age);
-                break;
-            case 6:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithRandomWeightRandomHeightFixedAge(sex, weight, height, age);
-                break;
-            case 7:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithRandomWeightFixedHeightFixedAge(sex, weight, height, age);
-                break;
-            case 8:
-                printf("Please input your sex (1 for Male, 2 for Female):\n");
-                scanf("%d", &sex);
-                printf("Please input your weight:\n");
-                scanf("%f", &weight);
-                printf("Please input your height in centimeters:\n");
-                scanf("%g", &height);
-                printf("Please input your age:\n");
-                scanf("%d", &age);
-                simulateDailyIntakeFormulasWithFixedWeightRandomHeightFixedAge(sex, weight, height, age);
-                break;
-            case 9:
-                printf("Going back to the previous menu\n");
-            default:
-                printf("Invalid choice. Please choose a number between 1 and 8..\n");
-                break;
+                printf("Choose the data variation:\n");
+                printf("1. Random Weight variation\n");
+                printf("2. Random weight, height, and age variation\n");
+                printf("3. Fixed weight, random height, and random age variation\n");
+                printf("4. Fixed weight, fixed height, and random age variation\n");
+                printf("5. Random weight, fixed height, and random age variation\n");
+                printf("6. Random weight, random height, and fixed age variation\n");
+                printf("7. Random weight, fixed height, and fixed age variation\n");
+                printf("8. Fixed weight, random height, and fixed age variation\n");
+                printf("9. Go to the previous menu.\n");
+
+                scanf("%d", &submenuChoice);
+
+                switch (submenuChoice)
+                {
+                case 1:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithWeightVariation(sex, weight, height, age);
+                    break;
+                case 2:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithRandomWeightHeightAge(sex, weight, height, age);
+                    break;
+                case 3:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithFixedWeightRandomHeightRandomAge(sex, weight, height, age);
+                    break;
+                case 4:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithFixedWeightFixedHeightRandomAge(sex, weight, height, age);
+                    break;
+                case 5:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithRandomWeightFixedHeightRandomAge(sex, weight, height, age);
+                    break;
+                case 6:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithRandomWeightRandomHeightFixedAge(sex, weight, height, age);
+                    break;
+                case 7:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithRandomWeightFixedHeightFixedAge(sex, weight, height, age);
+                    break;
+                case 8:
+                    printf("Please input your sex (1 for Male, 2 for Female):\n");
+                    scanf("%d", &sex);
+                    printf("Please input your weight:\n");
+                    scanf("%f", &weight);
+                    printf("Please input your height in centimeters:\n");
+                    scanf("%g", &height);
+                    printf("Please input your age:\n");
+                    scanf("%d", &age);
+                    simulateDailyIntakeFormulasWithFixedWeightRandomHeightFixedAge(sex, weight, height, age);
+                    break;
+                case 9:
+                    printf("Going back to the main menu\n");
+                    break;
+
+                default:
+                    printf("Invalid choice. Please choose a number between 1 and 9.\n");
+                    break;
+                }
             }
-            return 0;
             break;
         }
 
